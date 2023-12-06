@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oosim's</title>
+    <link rel = "icon" type = "img/png" href = "https://github.com/oosim/tool/blob/main/Dino.png?raw=true">
+
+    <style>
+
+header {
+                font-family:'Lucida Sans', sans-serif;
+                text-align:center;
+                color: black;
+                font-size: 30px;
+                height: 8%;
+                margin: 0;
+                width: 100%;
+                background-color: #A9B388;}
+
+    </style>
+</head>
+<body>
+    <style>
+@font-face {
+                font-family: 'NanumSquareNeo-Variable';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+                font-weight: normal;
+                font-style: normal;}
+body {
+    background: #A9B388;
+    height: 4000px;
+    font-family: 'NanumSquareNeo-Variable';
+}
+
+div.인사 {
+    margin-top: 1000px;
+    color:aliceblue;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(0px);
+    transition: all 0.8s;
+}
+
+#설명 {
+    margin: 200px;
+    color: aliceblue;
+    font-size: 30px;
+    text-align: center;
+    }
+
+button {
+    background-color: #ccd5ae;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 15px;
+    color: black;
+    line-break: auto;
+    }
+textarea {
+    font-size: 0;
+    background-color: aliceblue;
+    color: #A9B388;
+    border-radius: 30%;
+    }
+
+span {
+    border-radius: 15px;
+}
+
+a:link {color: black; text-decoration: none}
+a:visited {color: black; text-decoration: none}
+button:hover {background: #5F6F52;}
+span:hover {
+    background-color: #ccd5ae;
+}
+
+
+</style>
+
+    <div id = 설명><strong>스크롤를 천천히 내려주세요</strong></p>
+    <div class = 인사><h1>안녕하세요</h1></div>
+    <div class = 인사><h1>Hello</h1></div>
+    <div class = 인사><h1>반갑습니다 :&#41;</h1></div>
+
+    <br>
+    <br>
+    <textarea id = mail style="resize:none">soso0469@naver.com</textarea>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <header>oosim's</header>
+
+    <br>
+    <br>
+
+    <a href = "https://oosim.github.io/2/index2.html">
+    <span>
+    <img src = "https://github.com/oosim/tool/blob/main/Dino.png?raw=true" width="250px" height="250px">
+    </span>
+
+</p>
+
+    <br>
+
+    <button><a href = "https://blog.naver.com/oosim_">Blog</a></button>
+    <button><a href = "https://www.instagram.com/oxix._.xix_/?next=%2F">Instagram</a></button>
+    <button onclick = "copy_to_clipboard()">E-mail</button>
+
+    <script>
+
+        let observer = new IntersectionObserver((e)=>{
+            e.forEach((box)=>{
+                if (box.isIntersecting){
+                box.target.style.opacity = 1;
+                box.target.style.transform = 'translateX(0px)';
+            } else {
+                box.target.style.opacity = 0;
+                box.target.style.transform = 'translateX(-50px)';
+
+            }
+            })
+        })
+
+        let div = document.querySelectorAll('div')
+        observer.observe(div[0])
+        observer.observe(div[1])
+        observer.observe(div[2])
+        observer.observe(div[3])
+
+        function copy_to_clipboard() {
+        var copyText = document.getElementById('mail');
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("Copy");
+        alert('이메일 주소가 복사되었습니다, 감사합니다.');
+        }
+
+    </script>
+
+</body>
+</html>
